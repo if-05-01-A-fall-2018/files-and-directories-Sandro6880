@@ -1,0 +1,35 @@
+1.FAT Main Memory Requirements: 
+
+a)	250GB = memory = 268435456000 Bytes;
+	1KB   = size = 1024 Bytes;
+
+	memory / size = capacity -> 262144000
+	A: The Disk has 262144000 Blocks.
+
+b)	A: same as the blocks sizes.
+
+c) 	log2(capacity) ~ 28 bit
+	The table should be the size of 32 bit (rounding up).
+
+d) 	(262.144.000 * 32)/ 8 = 1GB
+
+2.Random Access of Files
+
+a)	We have to go to a triple indirect block and calcualte
+	the position from there.
+
+b)	107.834.589 jumps are required to get to the desired block when
+	we are starting from the beginning of the file.
+
+3.UFS File Size i-node
+
+	Since 4KB blocksize has 4 times the value of Block references than 1 KB blocksize
+	the file is therefore 4 times smaller using the 1KB blocksize.
+
+4.UFS File Size
+
+a)	512 bytes would lead to a maximum of 1GB File size. Since we assume a file size of 5GB
+	we have to switch.
+
+b)	nothing would change, we still have to use the 1024 byte sized blocks. Since the required 
+	12GB are under the max File size of ~ 17GB.
